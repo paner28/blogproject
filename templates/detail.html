@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <img src="../static/img/桜.jpg" class="img-fluid" style="max-width: 100%; , height: auto; ">
+{% endblock header %}
+
+{% block content %}
+    <div class="card card-blog card-plain" style="padding:5%;">
+        <div class="content" style="padding:20px; border: solid 1px black;">
+            <h6 class="card-date">{{object.postdate}}</h6>
+            <a class="card-title"><h3>{{object.title}}</h3></a>
+            <hr class="info" style="width:70%;">
+            {% load markdown_extras %}
+            <a class="card-title"><h4>{{object.content | markdown | safe | linebreaks | urlize}}</h4></a>
+            <h6 class="card-category text-warning">{{object.category}}</h6>
+            <a href="{% url 'list' %}#article" class="btn btn-primary">一覧へ</a>
+            <a href="{% url 'update' object.pk %}" class="btn btn-primary">編集する</a>
+            <a href="{% url 'delete' object.pk %}" class="btn btn-primary">削除する</a>
+        </div>
+    </div>
+{% endblock content %}

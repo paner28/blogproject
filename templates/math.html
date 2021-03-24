@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <img src="../static/img/桜.jpg" class="img-fluid" style="max-width: 100%; , height: auto; ">
+{% endblock header %}
+
+{% block content %}
+    <div class="title-area text-center">
+        <h2>Latest My Study</h2>
+        <div class="separator separator-danger">✻</div>
+        <h3 class="description">最近取り組んでいる内容</h3>
+        <p>グラフ理論と位相幾何学を中心に取り組んでいます。現在は坪井先生のホモロジー入門を友人とゼミをして学んでいます。位相不変量を用いてグラフの分類などを行いたいと思っています。</p>
+        <h3>過去に作ったPDFです</h3>
+        <ul class="list-inline">
+            <li><h5>・<a href="https://app.luminpdf.com/viewer/605a95529067f0001117c7c4" target="_new">ブール代数</a> March 2020</h5><li>
+        </ul>
+    </div>
+
+    <div class="container section">
+        <div class="title-area text-center">
+            <h2>TextBook List</h2>
+            <div class="separator separator-danger">✻</div>
+            <p class="description">過去に学んだ内容と使用したテキストを記録しています</p>
+
+            <ul>
+                <div class="list-inline">
+                    <li><h3 class="text-info">線形代数</h3></li>
+                    <li><h5>「線形代数の世界」と「大学院への線形代数」</h5></li>
+                <div>
+                <div class="list-inline">
+                    <li><h3 class="text-warning">解析学</h3></li>
+                    <li><h5>「線形代数の世界」</h5></li>
+                <div>
+                <div class="list-inline">
+                    <li><h3 class="text-primary">位相と集合</h3></li>
+                    <li><h5>「集合・論理と位相」と「論理と集合(書房)」</h5></li>
+                <div>
+                <div class="list-inline">
+                    <li><h3 class="text-gray">幾何学</h3></li>
+                    <li><h5>「線形代数の世界」と「大学院への線形代数」</h5></li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container section">
+        {% for item in object_list %}
+        {% if item.category == "math" %}
+            <div class="card card-blog card-plain col-sm-4" style="padding:10px; ">
+                <div class="content" style="border: solid 1px black;padding:10px;">
+                    <h6 class="card-date">{{item.postdate}} (更新:{{item.editdate}})</h6>
+                    <a href="{% url 'detail' item.pk %}" class="card-title"><h3>{{item.title}}</h3></a>
+                    <hr class="info" style="width:70%;">
+                    <h5 class="card-category">{{item.category}}</h5>
+                </div>
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+{% endblock content %}

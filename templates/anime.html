@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <img src="../static/img/桜.jpg" class="img-fluid" style="max-width: 100%; , height: auto; ">
+{% endblock header %}
+
+{% block content %}
+    <div class="title-area text-center">
+        <h2>Special Anime List</h2>
+        <div class="separator separator-danger">✻</div>
+        <p class="description">Panarのイチオシアニメです！</p>
+    </div>
+    <div class="container section">
+        {% for item in object_list %}
+        {% if item.category == "Greate" %}
+            <div class="card card-blog card-plain col-sm-4" style="padding:10px; ">
+                <div class="content">
+                    <img style="max-width: 80%;" src="{{item.image}}"/>
+                    <a href="{{item.hp}}" class="card-title"><h3>{{item.title}}</h3></a>
+                    <hr class="info" style="width:70%;">
+                    <h5 class="tex-warning card-category">{{item.content | linebreaks }}</h5>
+                    <p class="tex-warning card-category">{{item.infomation | linebreaks }}</p>
+                    <h6 class="card-date">{{item.date}}</h6>
+                </div>
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="title-area text-center">
+        <h2>Watching Anime List</h2>
+        <div class="separator separator-danger">✻</div>
+        <p class="description">Panarが現在視聴しているアニメを紹介します。</p>
+    </div>
+    <div class="container section">
+        {% for item in object_list %}
+        {% if item.category == "Now" %}
+            <div class="card card-blog card-plain col-sm-4" style="padding:10px; ">
+                <div class="content">
+                    <img style="max-width: 80%;" src="{{item.image}}"/>
+                    <a href="{{item.hp}}" class="card-title"><h3>{{item.title}}</h3></a>
+                    <hr class="info" style="width:70%;">
+                    <h5 class="tex-warning card-category">{{item.content | linebreaks }}</h5>
+                    <p class="tex-warning card-category">{{item.infomation | linebreaks }}</p>
+                    <h6 class="card-date">{{item.date}}</h6>
+                </div>
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="title-area text-center">
+        <h2>Watch Anime List</h2>
+        <div class="separator separator-danger">✻</div>
+        <p class="description">Panarが今までに視聴してきたアニメの一覧です。詳しくは<a href="https://annict.jp/@Paner/watched" class="text-info">Annict</a>をご覧ください</p>
+    </div>
+    <div class="section container">
+        {% for item in object_list %}
+        {% if item.category == "Old" %}
+            <div class="card card-blog card-plain col-sm-3 col-xs-6" style="padding:10px; ">
+                <div class="content">
+                    <img style="max-width: 80%;" src="{{item.image}}"/>
+                    <a href="{{item.hp}}" class="card-title"><h3>{{item.title}}</h3></a>
+                    <hr class="info" style="width:70%;">
+                    <h5 class="tex-warning card-category">{{item.content | linebreaks }}</h5>
+                    <p class="tex-warning card-category">{{item.infomation | linebreaks }}</p>
+                    <h6 class="card-date">{{item.date}}</h6>
+                </div>
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+{% endblock content %}

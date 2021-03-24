@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <div class="section section-header">
+        <div class="parallax filter filter-color-black">
+            <div class="image" style="background-image:url('../static/img/20201212_110235 (2).jpg');max-width: 100%;">
+            </div>
+            <div class="container">
+                <div class="content text-center">
+                    <div class="row">
+                        <div class="title-area">
+                            <h1>Panar's Blog</h1>
+                            <div class="separator separator-danger">✻</div>
+                            <h3 class="description">Welcome To My HomePage!!</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock header %}
+
+{% block content %}
+    <div class="title-area text-center section container" id="portfolio">
+        <h2>Who I am?</h2>
+        <div class="separator separator-danger">✻</div>
+        <h3>私はTUSの数学科に通う学生です。</h3>
+        <h5>大学に入ってからはスポーツ観戦やプログラムにも興味を持ちました。</h5>
+        <h5>専攻：代数学、グラフ理論</h5>
+        <h5>趣味：素数大富豪(<a href="https://perfectnumber23.hatenablog.com/#f-16ed2ffe">素数大富豪関連のブログ</a>)、スポーツ観戦、アニメ、散歩</h5>
+        <h5>日課：理科大の写真撮影、ラーメン</h5>
+    </div>
+
+    <div class="section section-our-team-freebie" id="section">
+        <div class="parallax filter filter-color-black">
+            <div class="image" style="">
+            </div>
+            <div class="container">
+                <div class="content">
+                    <div class="row">
+                        <div class="title-area">
+                            <h2>Section</h2>
+                            <div class="separator separator-danger">✻</div>
+                        </div>
+                    </div>
+
+                    <div class="team">
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <a href="{% url 'sport' %}" class="header col-md-4">
+                                    <div class="card card-blog">
+                                        <img src="https://tk.ismcdn.jp/mwimgs/7/2/1140/img_726eb4afd47b4a437d0a8a500825bdf8315436.jpg">
+                                        <div class="content" style="padding:10px;">
+                                            <h6 class="card-date">March 21</h6>
+                                            <h3>Sport</h3>
+                                            <h6 class="card-category">興味のあるスポーツや最近やっている運動をまとめています</h6>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{% url 'anime' %}" class="header col-md-4">
+                                    <div class="card card-blog">
+                                        <img src="https://i.gzn.jp/img/2019/12/14/anime-2020winter/00.png" class="image-header">
+                                        <div class="content" style="padding:10px;">
+                                            <h6 class="card-date">March 23</h6>
+                                            <h3>Anime</h3>
+                                            <h6 class="card-category">現在視聴しているアニメや過去に見たアニメのリストです</h6>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{% url 'skill' %}" class="header col-md-4">
+                                    <div class="card card-blog">
+                                        <img src="https://www.ncsx.co.jp/business/softwarepackage/img/prog_pic_01.jpg" class="image-header">
+                                        <div class="content" style="padding:10px;">
+                                            <h6 class="card-date">March 21</h6>
+                                            <h3>Program</h3>
+                                            <h6 class="card-category">最近の制作物をまとめています</h6>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{% url 'food' %}" class="header col-md-4">
+                                    <div class="card card-blog">
+                                        <img src="https://resources.matcha-jp.com/resize/720x2000/2019/04/16-75284.jpeg">
+                                        <div class="content" style="padding:10px;">
+                                            <h6 class="card-date">March 21</h6>
+                                            <h3>Ramen</h3>
+                                            <h6 class="card-category">最近食べたラーメンです</h6>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{% url 'math' %}" class="header col-md-4">
+                                    <div class="card card-blog">
+                                        <img src="https://gendai.ismcdn.jp/mwimgs/0/d/640m/img_0d810b92d6721811387368a00607e9d0249350.jpg" class="image-header">
+                                        <div class="content" style="padding:10px;">
+                                            <h6 class="card-date">March 21</h6>
+                                            <h3>Mathmatics</h3>
+                                            <h6 class="card-category">興味のある数学の分野や作成したpdfはこちら</h6>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container section" id="article">
+        <div class="title-area text-center"\>
+            <h2>Articles</h2>
+            <div class="separator separator-danger">✻</div>
+        </div>
+        {% for item in object_list %}
+            <div class="card card-blog card-plain col-sm-4" style="padding:10px; ">
+                <div class="content" style="border: solid 1px black;padding:10px;">
+                    <h6 class="card-date">{{item.postdate}} (更新:{{item.editdate}})</h6>
+                    <a href="{% url 'detail' item.pk %}" class="card-title"><h3>{{item.title}}</h3></a>
+                    <hr class="info" style="width:70%;">
+                    <a href="{% url 'topic' item.category %} "><h5 class="tex-warning card-category">{{item.category}}</h5></a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="container section">
+        <a href="{% url 'create' %}" class="btn btn-primary">新規作成</a>
+    </div>
+{% endblock content %}
