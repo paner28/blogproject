@@ -26,7 +26,16 @@ SECRET_KEY = 'ghx$1f&nhf8et)d$f94jfvw$%q@o8@@s@l%g-)2q1clxyl$^5m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+try:
+    from config.local_settings import *
+except ImportError:
+    pass
+
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
+
+ALLOWED_HOSTS = ["paner-blog.herokuapp.com"]
 
 
 # Application definition
