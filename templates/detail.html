@@ -13,7 +13,7 @@
             {% load markdown_extras %}
             <a class="card-title"><h4>{{object.content | markdown | safe | linebreaks | urlize}}</h4></a>
             <h6 class="card-category text-warning">{{object.category}}</h6>
-            <a href="{% url 'list' %}#article" class="btn btn-primary">一覧へ</a>
+            <a href="{% url 'home' %}#article" class="btn btn-primary">一覧へ</a>
             <a href="{% url 'update' object.pk %}" class="btn btn-primary">編集する</a>
             <a href="{% url 'delete' object.pk %}" class="btn btn-primary">削除する</a>
         </div>

@@ -5,14 +5,14 @@
 {% endblock header %}
 
 {% block content %}
-    <div class="title-area text-center list-inline">
+    <div class="title-area text-center home-inline">
         <li><h2>Articles</h2></li>
         <li><h3>({{parameter}})</h3></li>
         <div class="separator separator-danger">✻</div>
     </div>
 
     <div class="container section">
-        {% for item in object_list %}
+        {% for item in object_home %}
         {% if item.category == parameter %}
             <div class="card card-blog card-plain col-sm-4" style="padding:10px; ">
                 <div class="content" style="border: solid 1px black;padding:10px;">
@@ -27,7 +27,7 @@
     </div>
 
     <div class="container section">
-        <a href="{% url 'list' %}#article" class="btn btn-primary">一覧へ</a>
+        <a href="{% url 'home' %}#article" class="btn btn-primary">一覧へ</a>
     </div>
 
 {% endblock content %}

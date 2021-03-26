@@ -4,7 +4,7 @@ from .models import BlogModel,AnimeModel,RamennModel
 from django.urls import reverse_lazy
 
 class BlogList(ListView):
-    template_name = 'list.html'
+    template_name = 'home.html'
     model = BlogModel
 
 class BlogDetail(DetailView):
@@ -36,18 +36,18 @@ class BlogCreate(CreateView):
     template_name = 'create.html'
     model = BlogModel
     fields = ( 'title', 'content', 'category')
-    success_url = reverse_lazy('list')
+    success_url = reverse_lazy('home')
 
 class BlogDelete(DeleteView):
     template_name = 'delete.html'
     model = BlogModel
-    success_url = reverse_lazy('list')
+    success_url = reverse_lazy('home')
 
 class BlogUpdate(UpdateView):
     template_name = 'update.html'
     model = BlogModel
     fields = ( 'title', 'content', 'category')
-    success_url = reverse_lazy('list')
+    success_url = reverse_lazy('home')
 
 def indexview(request):
     return render(request, 'index.html')
