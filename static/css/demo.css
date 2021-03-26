@@ -86,7 +86,6 @@
 }
 .navigation-example{
     height: 360px;
-    background-image: url('../img/bg.jpg');
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
