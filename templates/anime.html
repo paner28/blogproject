@@ -15,8 +15,10 @@
         {% if item.category == "Greate" %}
             <div class="card card-blog card-plain col-sm-4" style="padding:10px; ">
                 <div class="content">
-                    <img style="max-width: 80%;" src="{{item.image}}"/>
-                    <a href="{{item.hp}}" class="card-title"><h3>{{item.title}}</h3></a>
+                    <div class="text-center">
+                        <img class="rounded" style="max-width: 80%;" src="{{item.image}}"/>
+                        <a href="{{item.hp}}" class="card-title"><h3>{{item.title}}</h3></a>
+                    </div>
                     <hr class="info" style="width:70%;">
                     <h5 class="tex-warning card-category">{{item.content | linebreaks }}</h5>
                     <p class="tex-warning card-category">{{item.infomation | linebreaks }}</p>
@@ -37,8 +39,10 @@
         {% if item.category == "Now" %}
             <div class="card card-blog card-plain col-sm-4" style="padding:10px; ">
                 <div class="content">
-                    <img style="max-width: 80%;" src="{{item.image}}"/>
-                    <a href="{{item.hp}}" class="card-title"><h3>{{item.title}}</h3></a>
+                    <div class="text-center">
+                        <img class="rounded" style="max-width: 80%;" src="{{item.image}}"/>
+                        <a href="{{item.hp}}" class="card-title"><h3>{{item.title}}</h3></a>
+                    </div>
                     <hr class="info" style="width:70%;">
                     <h5 class="tex-warning card-category">{{item.content | linebreaks }}</h5>
                     <p class="tex-warning card-category">{{item.infomation | linebreaks }}</p>
@@ -59,8 +63,10 @@
         {% if item.category == "Old" %}
             <div class="card card-blog card-plain col-sm-3 col-xs-6" style="padding:10px; ">
                 <div class="content">
-                    <img style="max-width: 80%;" src="{{item.image}}"/>
-                    <a href="{{item.hp}}" class="card-title"><h3>{{item.title}}</h3></a>
+                    <div class="text-center">
+                        <img class="rounded" style="max-width: 80%;" src="{{item.image}}"/>
+                        <a href="{{item.hp}}" class="card-title"><h3>{{item.title}}</h3></a>
+                    </div>
                     <hr class="info" style="width:70%;">
                     <h5 class="tex-warning card-category">{{item.content | linebreaks }}</h5>
                     <p class="tex-warning card-category">{{item.infomation | linebreaks }}</p>
