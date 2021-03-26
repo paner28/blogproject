@@ -28,7 +28,7 @@ SECRET_KEY = 'ghx$1f&nhf8et)d$f94jfvw$%q@o8@@s@l%g-)2q1clxyl$^5m'
 DEBUG = False
 
 # ALLOWED_HOSTS = ["paner-blog.herokuapp.com"]
-ALLOWED_HOSTS = ["https://paner-blog.herokuapp.com","localhost","127.0.0.1"]
+ALLOWED_HOSTS = ["https://panerblog.herokuapp.com","localhost","127.0.0.1"]
 
 # Application definition
 
