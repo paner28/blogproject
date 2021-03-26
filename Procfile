@@ -1,1 +1,1 @@
-web: gunicorn panerblog.wsgi --log-file -
+web: gunicorn blogproject.wsgi
