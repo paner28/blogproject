@@ -2,7 +2,7 @@ from django.urls import path
 from .views import BlogList,BlogDetail,BlogCreate,BlogDelete,BlogUpdate,indexview,skillview,sportview,BlogTopic,BlogAnime,BlogMath,BlogFood
 
 urlpatterns = [
-    path('home/', BlogList.as_view(), name='home'),
+    path('', BlogList.as_view(), name='home'),
     path('index/', indexview, name="index"),
     path('skill/', skillview, name="skill"),
     path('anime/', BlogAnime.as_view(), name="anime"),
