@@ -115,7 +115,7 @@
         {% for item in object_list %}
             <div class="card card-blog card-plain col-sm-4" style="padding:10px; ">
                 <div class="content" style="border: solid 1px black;padding:10px;">
-                    <h6 class="card-date">{{item.postdate}} (更新:{{item.editdate}})</h6>
+                    <h6 class="card-date">{{item.postdate}} (最終更新:{{item.editdate}})</h6>
                     <a href="{% url 'detail' item.pk %}" class="card-title"><h3>{{item.title}}</h3></a>
                     <hr class="info" style="width:70%;">
                     <a href="{% url 'topic' item.category %} "><h5 class="tex-warning card-category">{{item.category}}</h5></a>

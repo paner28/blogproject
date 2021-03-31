@@ -67,12 +67,14 @@
             </a>
             <ul class="dropdown-menu dropdown-danger">
               <li>
-                <a class="fa fa-twitter" href="https://twitter.com/share?url={{ request.scheme }}://{{ request.get_host }} Panar's Blog" target="_blank" rel="nofollow">
+                <a class="fa fa-twitter" href="https://twitter.com/share?url={{ request.scheme }}://{{ request.get_host }}{% url 'app:post_detail' post.pk %} Panar's Blog" target="_blank" rel="nofollow">
                     Twitter
                 </a>
               </li>
               <li>
-                <a href="#"><i class="fa fa-instagram"></i> Instagram</a>
+                <a class="fa fa-twitter" href="https://www.facebook.com/sharer/sharer.php?u={{ request.scheme }}://{{ request.get_host }}{% url 'app:post_detail' post.pk %} Panar's Blog" target="_blank" rel="nofollow">
+                    Facebook
+                </a>
               </li>
             </ul>
           </li>
