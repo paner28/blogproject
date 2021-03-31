@@ -10,7 +10,7 @@
         <div class="separator separator-danger">✻</div>
         <p class="description">Panarのイチオシアニメです！</p>
     </div>
-    <div class="container section">
+    <div class="container section" style="display: flex; flex-wrap: wrap;>
         {% for item in object_list %}
         {% if item.category == "Greate" %}
             <div class="card card-blog card-plain col-sm-4" style="padding:10px; ">
@@ -34,7 +34,7 @@
         <div class="separator separator-danger">✻</div>
         <p class="description">Panarが現在視聴しているアニメを紹介します。</p>
     </div>
-    <div class="container section">
+    <div class="container section" style="display: flex; flex-wrap: wrap;">
         {% for item in object_list %}
         {% if item.category == "Now" %}
             <div class="card card-blog card-plain col-sm-4" style="padding:10px; ">
@@ -58,7 +58,7 @@
         <div class="separator separator-danger">✻</div>
         <p class="description">Panarが今までに視聴してきたアニメの一覧です。詳しくは<a href="https://annict.jp/@Paner/watched" class="text-info">Annict</a>をご覧ください</p>
     </div>
-    <div class="section container">
+    <div class="section container" style="display: flex; flex-wrap: wrap;>
         {% for item in object_list %}
         {% if item.category == "Old" %}
             <div class="card card-blog card-plain col-sm-3 col-xs-6" style="padding:10px; ">
