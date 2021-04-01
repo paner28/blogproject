@@ -63,7 +63,7 @@ def sportview(request):
     return render(request, 'sport.html')
 
 def pdfview(request):
-    return render(request, 'pdf.html')
+    return render(request, 'booleanAlgebra.html')
 
 class BlogMath(ListView):
     template_name = 'math.html'
