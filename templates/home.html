@@ -111,14 +111,16 @@
         <div class="title-area text-center"\>
             <h2>Articles</h2>
             <div class="separator separator-danger">✻</div>
-            <a href="{% url 'topic' 'math' %} "><h4 class="card-category">数学</h4></a>
-            <a href="{% url 'topic' 'program' %} "><h4 class="card-category">プログラム</h4></a>
-            <a href="{% url 'topic' 'anime' %} "><h4 class="card-category">アニメ</h4></a>
-            <a href="{% url 'topic' 'prime' %} "><h4 class="card-category">素数</h4></a>
-            <a href="{% url 'topic' 'game' %} "><h4 class="card-category">ゲーム</h4></a>
-            <a href="{% url 'topic' 'sports' %} "><h4 class="card-category">スポーツ</h4></a>
-            <a href="{% url 'topic' 'life' %} "><h4 class="card-category">日常</h4></a>
-            <a href="{% url 'topic' 'others' %} "><h4 class="card-category">その他</h4></a>
+            <div class="title-area text-center list-inline">
+                <li><a href="{% url 'topic' 'math' %} "><h4 class="card-category">数学</h4></a></li>
+                <li><a href="{% url 'topic' 'program' %} "><h4 class="card-category">プログラム</h4></a></li>
+                <li><a href="{% url 'topic' 'anime' %} "><h4 class="card-category">アニメ</h4></a></li>
+                <li><a href="{% url 'topic' 'prime' %} "><h4 class="card-category">素数</h4></a></li>
+                <li><a href="{% url 'topic' 'game' %} "><h4 class="card-category">ゲーム</h4></a></li>
+                <li><a href="{% url 'topic' 'sports' %} "><h4 class="card-category">スポーツ</h4></a></li>
+                <li><a href="{% url 'topic' 'life' %} "><h4 class="card-category">日常</h4></a></li>
+                <li><a href="{% url 'topic' 'others' %} "><h4 class="card-category">その他</h4></a></li>
+            </div>
         </div>
         <div style="display: flex; flex-wrap: wrap;">
         {% for item in object_list %}
