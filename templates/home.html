@@ -46,7 +46,7 @@
 
                     <div class="team">
                         <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
+                            <div class="col-md-10 col-md-offset-1" style="display: flex; flex-wrap: wrap;">
                                 <a href="{% url 'sport' %}" class="header col-md-4 col-xs-6">
                                     <div class="card card-blog">
                                         <img src="https://tk.ismcdn.jp/mwimgs/7/2/1140/img_726eb4afd47b4a437d0a8a500825bdf8315436.jpg">
@@ -112,6 +112,14 @@
             <h2>Articles</h2>
             <div class="separator separator-danger">✻</div>
             <a href="{% url 'topic' 'math' %} "><h4 class="card-category">数学</h4></a>
+            <a href="{% url 'topic' 'program' %} "><h4 class="card-category">プログラム</h4></a>
+            <a href="{% url 'topic' 'anime' %} "><h4 class="card-category">アニメ</h4></a>
+            <a href="{% url 'topic' 'prime' %} "><h4 class="card-category">素数</h4></a>
+            <a href="{% url 'topic' 'game' %} "><h4 class="card-category">ゲーム</h4></a>
+            <a href="{% url 'topic' 'sports' %} "><h4 class="card-category">スポーツ</h4></a>
+            <a href="{% url 'topic' 'life' %} "><h4 class="card-category">日常</h4></a>
+            <a href="{% url 'topic' 'others' %} "><h4 class="card-category">その他</h4></a>
+            <a href="{% url 'topic' %} "><h4 class="card-category">全て</h4></a>
         </div>
         <div style="display: flex; flex-wrap: wrap;">
         {% for item in object_list %}
