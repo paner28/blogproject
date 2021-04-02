@@ -47,7 +47,7 @@
                     <div class="team">
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
-                                <a href="{% url 'sport' %}" class="header col-md-4">
+                                <a href="{% url 'sport' %}" class="header col-md-4 col-xs-6">
                                     <div class="card card-blog">
                                         <img src="https://tk.ismcdn.jp/mwimgs/7/2/1140/img_726eb4afd47b4a437d0a8a500825bdf8315436.jpg">
                                         <div class="content" style="padding:10px;">
@@ -57,7 +57,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="{% url 'anime' %}" class="header col-md-4">
+                                <a href="{% url 'anime' %}" class="header col-md-4 col-xs-6">
                                     <div class="card card-blog">
                                         <img src="https://i.gzn.jp/img/2019/12/14/anime-2020winter/00.png" class="image-header">
                                         <div class="content" style="padding:10px;">
@@ -67,7 +67,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="{% url 'skill' %}" class="header col-md-4">
+                                <a href="{% url 'skill' %}" class="header col-md-4 col-xs-6">
                                     <div class="card card-blog">
                                         <img src="https://www.ncsx.co.jp/business/softwarepackage/img/prog_pic_01.jpg" class="image-header">
                                         <div class="content" style="padding:10px;">
@@ -77,7 +77,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="{% url 'food' %}" class="header col-md-4">
+                                <a href="{% url 'food' %}" class="header col-md-4 col-xs-6">
                                     <div class="card card-blog">
                                         <img src="https://resources.matcha-jp.com/resize/720x2000/2019/04/16-75284.jpeg">
                                         <div class="content" style="padding:10px;">
@@ -87,7 +87,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="{% url 'math' %}" class="header col-md-4">
+                                <a href="{% url 'math' %}" class="header col-md-4 col-xs-6">
                                     <div class="card card-blog">
                                         <img src="https://gendai.ismcdn.jp/mwimgs/0/d/640m/img_0d810b92d6721811387368a00607e9d0249350.jpg" class="image-header">
                                         <div class="content" style="padding:10px;">
@@ -111,7 +111,9 @@
         <div class="title-area text-center"\>
             <h2>Articles</h2>
             <div class="separator separator-danger">✻</div>
+            <a href="{% url 'topic' math %} "><h4 class="card-category">数学</h4></a>
         </div>
+        <div style="display: flex; flex-wrap: wrap;">
         {% for item in object_list %}
             <div class="card card-blog card-plain col-sm-4" style="padding:10px; ">
                 <div class="content" style="border: solid 1px black;padding:10px;">
@@ -122,6 +124,7 @@
                 </div>
             </div>
         {% endfor %}
+        </div>
     </div>
     {% comment %} <div class="container section">
         <a href="{% url 'create' %}" class="btn btn-primary">新規作成</a>

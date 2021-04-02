@@ -11,9 +11,9 @@
         <h3 class="description">最近食べたラーメン</h3>
     </div>
 
-    <div class="container section">
+    <div class="container section" style="display: flex; flex-wrap: wrap;">
         {% for item in object_list %}
-            <div class="card card-blog card-plain col-sm-4" style="padding:10px; ">
+            <div class="card card-blog card-plain col-sm-4 col-xs-6" style="padding:10px; ">
                 <div class="content text-center" style="border: solid 1px black;padding:10px;">
                     <img src="../{{item.picture}}" />
                     <h3>{{item.title}}</h3>
