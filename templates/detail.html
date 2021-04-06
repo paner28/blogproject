@@ -8,12 +8,12 @@
     <div class="card card-blog card-plain" style="padding:5%;">
         <div class="content" style="padding:20px; border: solid 1px black;">
             <div class="title-area text-center list-inline">
-                <li><h3 class="card-title">{{object.title}}</h3></li>
+                <li><h2 class="card-title">{{object.title}}</h2></li>
                 <li><h6 class="card-date">{{object.postdate}}</h6></li>
             </div>
             <hr class="info" style="width:70%;">
             {% load markdown_extras %}
-            <a class="card-title" id="content"><h4>{{object.content | markdown | safe | linebreaks | urlize}}</h4></a>
+            <a class="card-title"><h4 id="content">{{object.content | markdown | safe | linebreaks | urlize}}</h4></a>
             <a href="{% url 'topic' object.category %} "><h5 class="tex-warning card-category">{{object.category}}</h5></a>
             <a href="{% url 'home' %}#article" class="btn btn-primary">一覧へ</a>
             {% comment %} <a href="{% url 'update' object.pk %}" class="btn btn-primary">編集する</a>
